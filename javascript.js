@@ -4,6 +4,15 @@ var action;
 var timelef;
 var pos =100;
 
+document.getElementById("set").onclick=function(){
+    timelef=document.getElementById("timereq").value;
+    if(timelef<=0){
+        location.reload();
+        aaja("wrong");
+    }
+}
+
+
 document.getElementById("startreset").onclick=function(){
     if(isPlaying==true){
         location.reload();
@@ -14,7 +23,6 @@ document.getElementById("startreset").onclick=function(){
         score=0;
         document.getElementById("value").innerHTML=score;
         aaja("timerem");
-        timelef=10;
         document.getElementById("startreset").innerHTML="Reset Game";
         startCountdown();
         chalu();
@@ -59,16 +67,16 @@ function chalu(){
     pos=Math.round(3*Math.random())+1;
     document.getElementById("question").innerHTML=`${x} * ${y}`;
     var lis=[];
+    lis.push(x*y);
     for(var i=1;i<=4;i++){
         if(i==pos){
             document.getElementById(`box${i}`).innerHTML=x*y;
-            lis.push(x*y);
         }
         else{
-            var kuchbhi =(Math.round(99*Math.random())+1);
+            var kuchbhi =(Math.round(9*Math.random())+1)*(Math.round(9*Math.random())+1);
             while(lis.includes(kuchbhi))
             {
-                kuchbhi =(Math.round(99*Math.random())+1);
+                kuchbhi =(Math.round(9*Math.random())+1)*(Math.round(9*Math.random())+1);
             }
             lis.push(kuchbhi);
             document.getElementById(`box${i}`).innerHTML=kuchbhi;
@@ -80,7 +88,7 @@ function chalu(){
                 document.getElementById(`box${i}`).onclick=function(){
                     aaja("correct");
                     score++;
-                    setTimeout(function(){chupJa("correct");},1000);
+                    setTimeout(function(){chupJa("correct");},700);
                     document.getElementById("value").innerHTML=score;
                     chalu();
                 }
@@ -88,7 +96,7 @@ function chalu(){
             else{
                 document.getElementById(`box${i}`).onclick=function(){
                     aaja("wrong");
-                    setTimeout(function(){chupJa("wrong");},1000);
+                    setTimeout(function(){chupJa("wrong");},700);
                 }
             }
         }
