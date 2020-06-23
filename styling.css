@@ -24,6 +24,16 @@ html{
     left: 500px;
 }
 
+/*#hscore{
+    background: #F1FF92;
+    color: #888E5F;
+    padding: 10px;
+    box-shadow:#9da853 0px 4px 2px;
+    position: absolute;
+    left: 500px;
+    top:50px;
+}*/
+
 #correct{
     position: absolute;
     left:260px;
