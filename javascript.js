@@ -74,7 +74,7 @@ function chalu(){
             document.getElementById(`box${i}`).innerHTML=kuchbhi;
         }
     } 
-
+    if(isPlaying==true){
         for(var i=1;i<=4;i++){
             if(i===pos){
                 document.getElementById(`box${i}`).onclick=function(){
@@ -92,4 +92,5 @@ function chalu(){
                 }
             }
         }
+    }
 }
