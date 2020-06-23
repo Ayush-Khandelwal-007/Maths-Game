@@ -2,16 +2,17 @@ var isPlaying=false;
 var score=0;
 var action;
 var timelef;
+var temp;
 var pos =100;
 
 document.getElementById("set").onclick=function(){
     timelef=document.getElementById("timereq").value;
+    temp=timelef;
     if(timelef<=0){
         location.reload();
         aaja("wrong");
     }
 }
-
 
 document.getElementById("startreset").onclick=function(){
     if(isPlaying==true){
@@ -24,6 +25,7 @@ document.getElementById("startreset").onclick=function(){
         document.getElementById("value").innerHTML=score;
         aaja("timerem");
         document.getElementById("startreset").innerHTML="Reset Game";
+        timelef=temp;
         startCountdown();
         chalu();
         chupJa("correct");
@@ -42,7 +44,7 @@ function startCountdown(){
             aaja("gameover");
             document.getElementById("gameover").style.fontSize="45px";
             document.getElementById("gameover").style.lineHeight="40px"
-            document.getElementById("gameover").innerHTML=`GAME OVER!<br><br><br>YOUR SCORE IS ${score}`;
+            document.getElementById("gameover").innerHTML=`GAME OVER!<br><br>YOUR SCORE IS ${score}<br><label for="timereq">Time(in sec):</label><input type="number" id="timereq" placeholder="Time"></input><button id="set">Set Time</button>`;
             chupJa("timerem");
             chupJa("correct");
             chupJa("wrong");
