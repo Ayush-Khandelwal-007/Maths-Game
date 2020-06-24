@@ -1,18 +1,9 @@
 var isPlaying=false;
 var score=0;
 var action;
-var timelef;
+var timelef=0;
 var temp;
 var pos =100;
-
-document.getElementById("set").onclick=function(){
-    timelef=document.getElementById("timereq").value;
-    temp=timelef;
-    if(timelef<=0){
-        location.reload();
-        aaja("wrong");
-    }
-}
 
 document.getElementById("startreset").onclick=function(){
     if(isPlaying==true){
@@ -23,7 +14,6 @@ document.getElementById("startreset").onclick=function(){
         isPlaying=true;
         score=0;
         document.getElementById("value").innerHTML=score;
-        aaja("timerem");
         document.getElementById("startreset").innerHTML="Reset Game";
         timelef=temp;
         startCountdown();
@@ -34,17 +24,16 @@ document.getElementById("startreset").onclick=function(){
 }
 
 function startCountdown(){
-    document.getElementById("time").innerHTML=timelef
+    document.getElementById("time").innerHTML=timelef;
     action=setInterval(function(){
         timelef--;
         document.getElementById("time").innerHTML=timelef ;
-        if(timelef==0){
+        if(timelef<=0){
             clearInterval(action);
             pos=100;
+            document.getElementById("one").innerHTML=`GAME OVER!<br><br>YOUR SCORE IS ${score}<br>`;
+            document.getElementById("two").innerHTML=``;
             aaja("gameover");
-            document.getElementById("gameover").style.fontSize="45px";
-            document.getElementById("gameover").style.lineHeight="40px"
-            document.getElementById("gameover").innerHTML=`GAME OVER!<br><br>YOUR SCORE IS ${score}<br><label for="timereq">Time(in sec):</label><input type="number" id="timereq" placeholder="Time"></input><button id="set">Set Time</button>`;
             chupJa("timerem");
             chupJa("correct");
             chupJa("wrong");
@@ -54,6 +43,27 @@ function startCountdown(){
     },1000)
     
 }
+
+document.getElementById("set").onclick=function(){
+    timelef=document.getElementById("timereq").value;
+    temp=timelef;
+    if(timelef<=0){
+        location.reload();
+        aaja("wrong");
+    }
+    else{
+        document.getElementById("time").innerHTML=timelef ;
+        aaja("timerem");
+    }
+}
+
+document.getElementById("timereq")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("set").click();
+    }
+});
 
 function chupJa(id){
     document.getElementById(id).style.display="none";
