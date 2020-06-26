@@ -5,7 +5,7 @@ html{
 }
 
 #container {
-    height: 400px;
+    height: 430px;
     width: 550px;
     background:#9DD2EA;
     margin: 150px auto;
@@ -18,21 +18,25 @@ html{
 #score{
     background: #F1FF92;
     color: #888E5F;
-    padding: 10px;
+    padding: 5px 10px;
     box-shadow:#9da853 0px 4px 2px;
     position: absolute;
     left: 500px;
+    top:10px;
+    visibility: hidden;
 }
 
-/*#hscore{
+#hscore{
     background: #F1FF92;
+    width: max-content;
     color: #888E5F;
-    padding: 10px;
+    padding:5px 10px;
     box-shadow:#9da853 0px 4px 2px;
     position: absolute;
-    left: 500px;
-    top:50px;
-}*/
+    left: 450px;
+    top:48px;
+    visibility:hidden;
+}
 
 #correct{
     position: absolute;
@@ -55,12 +59,13 @@ html{
 #question{
     width:450px;
     height:150px;
-    margin: 50px auto 10px auto;
+    margin: 70px auto 10px auto;
     background-color: #9da0ea;
     box-shadow: #535aa8 0px 4px 2px;
     font-size: 100px;
     text-align: center;
     font-family: 'Sriracha', cursive;
+    visibility: hidden;
 }
 
 #instruction{
@@ -98,6 +103,7 @@ html{
     -webkit-transition:all 0.2s ;
     -o-transition: all 0.2s;
     -ms-transition:all 0.2s;
+    visibility: hidden;
 }
 
 .box:hover{

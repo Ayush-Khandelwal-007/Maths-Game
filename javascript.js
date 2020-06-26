@@ -11,6 +11,13 @@ document.getElementById("startreset").onclick=function(){
     }
     else{
         chupJa("gameover");
+        dikhja("score");
+        var x = document.getElementsByClassName("box");
+        var i;
+        for (i = 0; i < x.length; i++) {
+        x[i].style.visibility = "visible";
+        }
+        dikhja("question");
         isPlaying=true;
         score=0;
         document.getElementById("value").innerHTML=score;
@@ -39,6 +46,12 @@ function startCountdown(){
             chupJa("wrong");
             isPlaying=false;
             document.getElementById("startreset").innerHTML="Start Game Again";
+            var x = document.getElementsByClassName("box");
+            var i;
+            for (i = 0; i < x.length; i++) {
+            x[i].style.visibility = "hidden";
+            dikhmat("question");
+            }
         } 
     },1000)
     
@@ -69,8 +82,16 @@ function chupJa(id){
     document.getElementById(id).style.display="none";
 }
 
+function dikhmat(id){
+    document.getElementById(id).style.visibility="hidden";
+}
+
 function aaja(id){
     document.getElementById(id).style.display="block";
+}
+
+function dikhja(id){
+    document.getElementById(id).style.visibility="visible";
 }
 
 function chalu(){
