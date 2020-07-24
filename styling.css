@@ -21,7 +21,7 @@ html{
     padding: 5px 10px;
     box-shadow:#9da853 0px 4px 2px;
     position: absolute;
-    left: 500px;
+    left: 487px;
     top:10px;
     visibility: hidden;
 }
@@ -33,9 +33,9 @@ html{
     padding:5px 10px;
     box-shadow:#9da853 0px 4px 2px;
     position: absolute;
-    left: 450px;
+    left: 465px;
     top:48px;
-    visibility:hidden;
+    visibility: hidden;
 }
 
 #correct{
@@ -127,6 +127,7 @@ html{
     -webkit-transition:all 0.2s ;
     -o-transition: all 0.2s;
     -ms-transition:all 0.2s;
+    visibility: hidden;
 }
 
 #startreset:hover{
