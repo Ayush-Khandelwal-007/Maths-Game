@@ -6,7 +6,7 @@ var temp;
 var pos =100;
 
 document.getElementById("startreset").onclick=function(){
-    if(isPlaying==true){
+    if(isPlaying==true ){
         location.reload();
     }
     else{
@@ -37,7 +37,7 @@ function startCountdown(){
         document.getElementById("time").innerHTML=timelef ;
         if(timelef<=0){
             clearInterval(action);
-            pos=100;
+            dikhmat("startreset");
             document.getElementById("one").innerHTML=`GAME OVER!<br><br>YOUR SCORE IS ${score}<br>`;
             document.getElementById("two").innerHTML=``;
             aaja("gameover");
@@ -59,6 +59,7 @@ function startCountdown(){
 
 document.getElementById("set").onclick=function(){
     timelef=document.getElementById("timereq").value;
+    dikhja("startreset");
     temp=timelef;
     if(timelef<=0){
         location.reload();
