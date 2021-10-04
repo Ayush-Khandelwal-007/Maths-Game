@@ -6,19 +6,22 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
         <link rel="stylesheet" href="styling.css">
     </head>
-    <body>
+    <body onload='getHighScore()'>
         <div id="container">
-            <div id="score">
-                Score:<span id="value">0</span>
-            </div>
-            <div id="hscore">
-                High Score:<span id="hvalue">0</span>
-            </div>
+
             <div id="correct">
                 Correct
             </div>
             <div id="wrong">
                 Try again
+            </div>
+
+
+            <div id="score">
+                Score:<span id="value">0</span>
+            </div>
+            <div id="hscore">
+                High Score ( per second ) : <span id="hvalue">0</span>
             </div>
             <div id="question">x * y</div>
             <div id="instruction">Click On The Correct Answer</div>
@@ -35,9 +38,33 @@
                 Time Remaining :<span id="time"> 60</span> sec
             </div>
             <div id="gameover">
-            <span id="one">CHECK YOUR MULTIPLICATION GAME</span><br><br><label for="timereq">Time(in sec):</label><input type="number" id="timereq" placeholder="Time"></input><button id="set">Set Time</button><span id="two"><br><br>CLICK ON THE BUTTON TO START THE GAME</span>
+            <span id="one">CHECK YOUR MULTIPLICATION GAME</span>
+            <br><br>
+            <label for="timereq">Time(in sec):</label>
+            <input type="number" id="timereq" placeholder="Time"></input>
+            <button id="set">Set Time</button>
+            <span id="two"><br><br>CLICK ON THE BUTTON TO START THE GAME</span>
             </div>
         </div>
     </body>
+    <script src='https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js'></script>
+
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyDouBqy9N-f4AL5OB6SG5AxuNbZHSbqV6A",
+          authDomain: "mathsgame-d3ff4.firebaseapp.com",
+          databaseURL: "https://mathsgame-d3ff4.firebaseio.com",
+          projectId: "mathsgame-d3ff4",
+          storageBucket: "mathsgame-d3ff4.appspot.com",
+          messagingSenderId: "215080333608",
+          appId: "1:215080333608:web:f4cdeb82e06d820293601d",
+          measurementId: "G-RFVC1QHFY6"
+        };
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.database();
+      </script>
     <script src="javascript.js"></script>
 </html>
