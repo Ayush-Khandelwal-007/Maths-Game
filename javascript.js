@@ -52,7 +52,7 @@ function startCountdown() {
         if (timelef <= 0) {
             clearInterval(action);
             dikhmat("startreset");
-            document.getElementById("one").innerHTML = `GAME OVER!<br><br>YOUR SCORE IS ${score} in ${temp} second.<br>`;
+            document.getElementById("one").innerHTML = `<br><br>GAME OVER!<br><br>YOUR SCORE IS ${score} in ${temp} second.<br>`;
             document.getElementById("two").innerHTML = `<br><br>Your score per second is ${score/temp}`;
             getHighScore();
             if(score/temp>highScore.score){
