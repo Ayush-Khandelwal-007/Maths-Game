@@ -20,7 +20,6 @@ document.getElementById("startreset").onclick = function () {
             x[i].style.visibility = "visible";
         }
         dikhja("question");
-        dikhja("instruction");
         isPlaying = true;
         score = 0;
         document.getElementById("value").innerHTML = score;
@@ -75,7 +74,6 @@ function startCountdown() {
             for (i = 0; i < x.length; i++) {
                 x[i].style.visibility = "hidden";
                 dikhmat("question");
-                dikhmat("instruction");
             }
         }
     }, 1000)
